@@ -6,6 +6,10 @@ const theTimer = document.querySelector(".timer");
 
 var timer = [0,0,0,0]; //Holds the minutes, seconds, hundredth of seconds and thousandths of seconds.
 
+var interval;
+
+var timerRunning = false;
+
 // Add leading zero to numbers 9 or below (purely for aesthetics):
 //Grabs any single digit number, convert it to a string, and then add a zero in front of it
 function leadingZero(time){
@@ -59,8 +63,10 @@ function start(){
     
     // If the content that currently sits there is equal to zero, then we start the timer(1000th of a second) 
     
-    if (textEnteredLength === 0 ){
-        setInterval(runTimer, 10);
+    if (textEnteredLength === 0 && !timerRunning){
+        
+        timerRunning = true
+        interval = setInterval(runTimer, 10);
         
     }
     
