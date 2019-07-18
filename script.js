@@ -19,11 +19,18 @@ function spellCheck{
 
 // Start the timer:
 function start(){
-    let textEnteredLength = testArea.value.length
-    console.log(textEnteredLength)
+    let textEnteredLength = testArea.value.length;
+    
+    // If the content that currently sits there is equal to zero, then we start the timer(1000th of a second) 
+    
+    if (textEnteredLength === 0 ){
+        setInterval(runTimer, 10);
+        
+    }
+    
+    console.log(textEnteredLength);
     
 }
-
 // Reset everything:
 function reset() {
     console.log("reset button has been pressed")
