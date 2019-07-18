@@ -7,7 +7,14 @@ const theTimer = document.querySelector(".timer");
 var timer = [0,0,0,0]; //Holds the minutes, seconds, hundredth of seconds and thousandths of seconds.
 
 // Add leading zero to numbers 9 or below (purely for aesthetics):
-
+//Grabs any single digit number, convert it to a string, and then add a zero in front of it
+function leadingZero(time){
+    if (time <=9) {
+        time = "0" + time;
+    }
+    
+    return time;
+}
 
 // Run a standard minute/second/hundredths timer:
 function runTimer(){
