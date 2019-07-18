@@ -69,7 +69,15 @@ function start(){
 }
 // Reset everything:
 function reset() {
-    console.log("reset button has been pressed")
+    clearInterval(interval);
+    interval = null;
+    timer = [0,0,0,0];
+    timerRunning = false;
+    
+    
+    testArea.value = "";
+    theTimer.innerHTML = "00:00:00"
+    textWrapper.style.borderColor ="grey"
     
 }
 
@@ -79,3 +87,9 @@ testArea.addEventListener("keypress", start,false); //Allows us to detect the fi
 testArea.addEventListener("keyup",spellCheck, false);
 
 resetButton.addEventListener("click", reset, false);//We're detecting click, and when the click happens,we run the reset button
+
+
+//Possible Additions
+//Words per minute counter
+//Array of different words
+//Errors as well
